@@ -1,0 +1,19 @@
+{
+  "name": "autoexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arya2004/AutoExpress.git"
+  },
+  "keywords": [],
+  "author": "arya2004",
+  "license": "ISC",
+  "bin": {
+    "auto": "./index.js"
+  }
+}

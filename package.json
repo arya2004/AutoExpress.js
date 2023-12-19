@@ -1,7 +1,7 @@
 {
   "name": "@arya2004/auto-express",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "AutoExpress simplifies the setup process for building Express API projects",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,10 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/arya2004/AutoExpress.js.git"
   },
-  "keywords": [],
+  "keywords": [ 
+  "javascript",
+  "npm",
+  "node",
+  "express"],
   "author": "arya2004",
-  "license": "ISC",
+  "license": "MIT",
   "bin": {
     "auto": "./index.js"
-  }
+  },
+  "dependencies": {
+    "inquirer": "^9.2.12"
+  },
+  "type": "module"
 }

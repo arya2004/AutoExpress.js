@@ -8,6 +8,7 @@ AutoExpress simplifies the setup process for building Express API projects, prov
 - **Express Framework**: Jumpstart your project with a pre-configured Express setup.
 - **Routing Made Easy**: Define API endpoints and routes effortlessly.
 - **Middleware Integration**: Preconfigured middleware for streamlined request handling.
+- **Database Integration**: Preconfigured your database connections
 - **Error Handling**: Basic error handling setup for smoother development.
 
 ## Installation
@@ -15,15 +16,21 @@ AutoExpress simplifies the setup process for building Express API projects, prov
 Ensure you have Node.js installed, then globally install the 'AutoExpress' package via npm:
 
 ```bash
-npm install -g autoexpress
+npm i -g @arya2004/auto-express
 ```
 
 ## Usage
 
-Generate a new Express API project using AutoExpress:
+Generate a new Express API project with MongoDb using AutoExpress:
 
 ```bash
 auto new my-express-api
+```
+
+Start an interactive CLI to configure project:
+
+```bash
+auto init
 ```
 
 Replace `my-express-api` with your preferred project name. This command will create a directory named `my-express-api` containing the starter project files and folders.

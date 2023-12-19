@@ -1,10 +1,15 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
+import fs from 'fs';
+import path from 'path';
+import { exec } from 'child_process'
+import {getProjectName, selectDb,selectStructure, selectRenderEngine } from './interactive.js';
+import { log } from 'console';
 
-function createFolderAndTxtFile(folderName) {
+
+
+
+function createFolderAndTxtFile(folderName, structute, dataBase, renderEngine) {
   // Create a directory for the Express API
 const currentPath = process.cwd();
 const apiPath = path.join(currentPath, folderName);
@@ -23,6 +28,28 @@ fs.mkdirSync(modelPath);
 fs.mkdirSync(dtoPath);
 fs.mkdirSync(midPath);
 fs.mkdirSync(utilsPath);
+
+if(structute == 'MVC'){
+  const renderer = path.join(apiPath, 'views');
+  fs.mkdirSync(renderer);
+
+  if(renderEngine === 'EJS'){
+    const ejs = path.join(renderer, 'index.ejs');
+    fs.writeFileSync(ejs, ''); 
+  }
+  else if(renderEngine === 'PUG'){
+    const pug = path.join(renderer, 'index.pug');
+    fs.writeFileSync(pug, ''); 
+  }
+  else if(renderEngine === 'Handlebars'){
+    const hbs = path.join(renderer, 'index.hbs');
+    fs.writeFileSync(hbs, ''); 
+  }
+}
+
+
+
+
 
 // Create an Express API file
 const apiFile = path.join(apiPath, 'app.js');
@@ -60,8 +87,9 @@ exec(`cd ${folderName}  && npm init -y`, (error, stdout, stderr) => {
       console.error(`Dependency installation error: ${stderr}`);
       return;
     }
-    console.log(`\n\n\n: ${stdout}`);
+    //console.log(`\n\n\n: ${stdout}`);
   });
+
 
 
 
@@ -73,41 +101,26 @@ exec(`cd ${folderName}  && npm init -y`, (error, stdout, stderr) => {
 
 
 // Extract command line arguments
-const args = process.argv.slice(2); // Exclude 'node' and script name
+const args = process.argv; // Exclude 'node' and script name
+//console.log(args);
+// if (args.length !== 1) {
+//   console.error('Please provide a single folder name.');
+//   process.exit(1);
+// }
 
-if (args.length !== 1) {
-  console.error('Please provide a single folder name.');
-  process.exit(1);
+const funcType = args[2];
+if (funcType === 'init') {
+  const projectName = await getProjectName();
+  const structute = await selectStructure();
+  const dataBase = await selectDb();
+  const renderEngine = await selectRenderEngine();
+  createFolderAndTxtFile(projectName, structute, dataBase, renderEngine);
+  
+}
+if (funcType === 'new') {
+  const folderName = args[3];
+  createFolderAndTxtFile(folderName, 'API', 'mongoDb');
 }
 
-const folderName = args[0];
-createFolderAndTxtFile(folderName);
 
 
-
-
-// const fs = require('fs');
-// const path = require('path');
-
-
-// // Create a directory for the Express API
-// const currentPath = process.cwd();
-// const apiPath = path.join(currentPath, 'webapi');
-
-// fs.mkdirSync(apiPath);
-
-// // Create an Express API file
-// const apiFile = path.join(apiPath, 'app.js');
-
-// fs.writeFileSync(apiFile, `
-// const express = require('express');
-// const app = express();
-
-// app.get('/', (req, res) => {
-//   res.send('Hello, World!');
-// });
-
-// app.listen(3000, () => {
-//   console.log('Server is running on port 3000');
-// });
-// `);

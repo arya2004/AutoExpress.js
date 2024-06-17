@@ -1,68 +1,50 @@
+# Express Project Generator
 
-# AutoExpress: Express API Starter Project Generator
-
-AutoExpress simplifies the setup process for building Express API projects, providing a quick and efficient way to start your API development.
+A generator for Express.js projects with database connections, caching, and MVC/API structures.
 
 ## Features
 
-- **Express Framework**: Jumpstart your project with a pre-configured Express setup.
-- **Routing Made Easy**: Define API endpoints and routes effortlessly.
-- **Middleware Integration**: Preconfigured middleware for streamlined request handling.
-- **Database Integration**: Preconfigured your database connections
-- **Error Handling**: Basic error handling setup for smoother development.
+- Generate Express.js projects with MVC or API structure.
+- Connect to major databases like MongoDB, PostgreSQL, MySQL, and SQLServer.
+- Optional view engine setup for MVC structure (EJS, Pug, Handlebars).
+- Basic weather model, controller, and API endpoint for demonstration.
 
 ## Installation
 
-Ensure you have Node.js installed, then globally install the 'AutoExpress' package via npm:
+To use this project generator, you can install it globally via npm:
 
 ```bash
-npm i -g @arya2004/auto-express
+npm install -g @arya2004/auto-express
 ```
+
+
 
 ## Usage
 
-Generate a new Express API project with MongoDb using AutoExpress:
+### Start an interactive CLI to configure project:
 
-```bash
-auto new my-express-api
-```
-
-Start an interactive CLI to configure project:
+To initialize a new project with interactive prompts:
 
 ```bash
 auto init
 ```
 
-Replace `my-express-api` with your preferred project name. This command will create a directory named `my-express-api` containing the starter project files and folders.
+### Generate a new Express API project with MongoDb using AutoExpress:
 
-## Getting Started
-
-1. Navigate to the project directory:
+To create a new API project with a specified name:
 
 ```bash
-cd my-express-api
+auto new my-express-api
 ```
-
-2. Start the development server:
-
-```bash
-npm start
-```
-
-Your server will be accessible at `http://localhost:3000`.
-
-## Project Structure
-
-- `/src`: Houses your Express application code.
-- `/src/routes`: Define API endpoints and routes here.
-- `/src/controllers`: Handle requests and responses logic.
-- `/src/middleware`: Store custom middleware functions here.
 
 ## Contributing
 
-Contributions are welcome! Feel free to submit issues or pull requests.
+Contributions are welcome! Please read the [Contributing Guide](CONTRIBUTING.md) for guidelines on how to proceed.
+
+## Code of Conduct
+
+This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
 ## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
+This project is licensed under the MIT License.

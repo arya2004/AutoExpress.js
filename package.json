@@ -18,7 +18,7 @@
   "author": "arya2004",
   "license": "MIT",
   "bin": {
-    "auto": "./index.js"
+    "auto": "./bin/createProject.js"
   },
   "dependencies": {
     "inquirer": "^9.2.12"

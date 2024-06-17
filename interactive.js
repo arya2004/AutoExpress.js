@@ -12,7 +12,7 @@ export const getProjectName = async () => {
     console.log(`Project name ${answer.userName}!`);
     return answer.userName;
   };
-   
+    
 
 export const selectStructure = async () => {
     const answer = await inquirer.prompt([

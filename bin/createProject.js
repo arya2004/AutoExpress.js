@@ -16,6 +16,6 @@ const args = process.argv.slice(2); // Exclude 'node' and script name
   }
   if (args[0] === 'new') {
     const folderName = args[1];
-    createProject(folderName, 'API', 'MongoDb');
+    createProject(folderName, 'API', 'MongoDB');
   }
 })();

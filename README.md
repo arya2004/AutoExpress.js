@@ -17,8 +17,6 @@ To use this project generator, you can install it globally via npm:
 npm install -g @arya2004/auto-express
 ```
 
-
-
 ## Usage
 
 ### Start an interactive CLI to configure project:
@@ -29,7 +27,7 @@ To initialize a new project with interactive prompts:
 auto init
 ```
 
-### Generate a new Express API project with MongoDb using AutoExpress:
+### Generate a new Express API project with MongoDB using AutoExpress:
 
 To create a new API project with a specified name:
 

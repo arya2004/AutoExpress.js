@@ -44,7 +44,7 @@ export const selectDb = async () => {
       type: 'list',
       name: 'selectedDb',
       message: 'Select Db integration:',
-      choices: ['MongoDb', 'Postgre', 'MySQL', 'SQLServer']
+      choices: ['MongoDB', 'Postgres', 'MySQL', 'SQLServer']
     }
   ]);
   console.log(`Db is ${answer.selectedDb}.`);

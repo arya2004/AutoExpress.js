@@ -17,8 +17,6 @@ To use this project generator, you can install it globally via npm:
 npm install -g @arya2004/auto-express
 ```
 
-
-
 ## Usage
 
 ### Start an interactive CLI to configure project:

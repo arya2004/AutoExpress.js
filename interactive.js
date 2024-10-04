@@ -1,19 +1,21 @@
 import inquirer from 'inquirer';
 
+// Function to prompt the user for the project name
 export const getProjectName = async () => {
-  const answer = await inquirer.prompt([
+  const { projectName } = await inquirer.prompt([
     {
       type: 'input',
-      name: 'userName',
+      name: 'projectName',
       message: 'Enter project name:'
     }
   ]);
-  console.log(`Project name ${answer.userName}!`);
-  return answer.userName;
+  console.log(`Project name ${projectName}!`);
+  return projectName;
 };
 
+// Function to prompt the user for the project structure
 export const selectStructure = async () => {
-  const answer = await inquirer.prompt([
+  const { selectedStructure } = await inquirer.prompt([
     {
       type: 'list',
       name: 'selectedStructure',
@@ -21,12 +23,13 @@ export const selectStructure = async () => {
       choices: ['MVC', 'API']
     }
   ]);
-  console.log(`Structure is ${answer.selectedStructure}.`);
-  return answer.selectedStructure;
+  console.log(`Structure is ${selectedStructure}.`);
+  return selectedStructure;
 };
 
+// Function to prompt the user for the render engine
 export const selectRenderEngine = async () => {
-  const answer = await inquirer.prompt([
+  const { selectedRenderEngine } = await inquirer.prompt([
     {
       type: 'list',
       name: 'selectedRenderEngine',
@@ -34,19 +37,20 @@ export const selectRenderEngine = async () => {
       choices: ['EJS', 'PUG', 'Handlebars']
     }
   ]);
-  console.log(`Render Engine is ${answer.selectedRenderEngine}.`);
-  return answer.selectedRenderEngine;
+  console.log(`Render Engine is ${selectedRenderEngine}.`);
+  return selectedRenderEngine;
 };
 
+// Function to prompt the user for the database
 export const selectDb = async () => {
-  const answer = await inquirer.prompt([
+  const { selectedDb } = await inquirer.prompt([
     {
       type: 'list',
       name: 'selectedDb',
       message: 'Select Db integration:',
-      choices: ['MongoDb', 'Postgre', 'MySQL', 'SQLServer']
+      choices: ['MongoDB', 'Postgres', 'MySQL', 'SQLServer']
     }
   ]);
-  console.log(`Db is ${answer.selectedDb}.`);
-  return answer.selectedDb;
+  console.log(`Db is ${selectedDb}.`);
+  return selectedDb;
 };

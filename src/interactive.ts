@@ -24,7 +24,6 @@ export const selectStructure = async () => {
   console.log(`Structure is ${answer.selectedStructure}.`);
   return answer.selectedStructure;
 };
-
 export const selectRenderEngine = async () => {
   const answer = await inquirer.prompt([
     {

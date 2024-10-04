@@ -1,4 +1,6 @@
-export const getDatabaseConfig = (database) => {
+import { Database } from "../types";
+
+export const getDatabaseConfig = (database:Database) => {
     switch (database) {
       case 'MongoDb':
         return {
